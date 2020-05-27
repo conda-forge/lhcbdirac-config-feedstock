@@ -3,7 +3,7 @@ About lhcbdirac-config
 
 Home: https://lhcb-dirac.readthedocs.io/
 
-Package license: GPL-3.0
+Package license: GPL-3.0-only
 
 Feedstock license: BSD 3-Clause
 

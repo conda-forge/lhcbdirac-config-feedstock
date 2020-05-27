@@ -2,7 +2,7 @@
 
 package:
   name: {{ name|lower }}
-  version: "2020.01.28"
+  version: "2020.05.27"
 
 build:
   noarch: generic
@@ -19,8 +19,7 @@ test:
 
 about:
   home: https://lhcb-dirac.readthedocs.io/
-  license: GPL-3.0
-  license_family: GPL
+  license: GPL-3.0-only
   license_file: LICENSE
   summary: 'Configuration package for LHCbDIRAC'
 
