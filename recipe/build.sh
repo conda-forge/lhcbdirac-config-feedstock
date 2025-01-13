@@ -11,7 +11,7 @@ cp -r "${RECIPE_DIR}/vomsdir-lhcb" "${PREFIX}/etc/grid-security/vomsdir/lhcb"
 
 # vomses
 mkdir -p "${PREFIX}/etc/grid-security/vomses"
-cp "${RECIPE_DIR}/vomses-lhcb" "${PREFIX}/etc/grid-security/vomses/lhcb"
+cp "${RECIPE_DIR}"/vomses-lhcb/* "${PREFIX}/etc/grid-security/vomses/"
 
 # Actiation scripts
 mkdir -p "${PREFIX}/etc/conda/activate.d"
