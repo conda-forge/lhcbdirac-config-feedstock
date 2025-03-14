@@ -7,7 +7,7 @@ cp "${RECIPE_DIR}/dirac.cfg" "${PREFIX}/etc/dirac.cfg"
 
 # vomsdir
 mkdir -p "${PREFIX}/etc/grid-security/vomsdir"
-cp -r "${RECIPE_DIR}/vomsdir-lhcb" "${PREFIX}/etc/grid-security/vomsdir/lhcb"
+cp -r "${RECIPE_DIR}/vomsdir-lhcb/lhcb/" "${PREFIX}/etc/grid-security/vomsdir/lhcb"
 
 # vomses
 mkdir -p "${PREFIX}/etc/grid-security/vomses"
