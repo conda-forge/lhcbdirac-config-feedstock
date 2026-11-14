@@ -1,0 +1,30 @@
+schema_version: 1
+
+package:
+  name: lhcbdirac-config
+  version: "0.2026.11.14"
+
+build:
+  number: 0
+  noarch: generic
+
+requirements:
+  run:
+    - ca-policy-lcg
+
+tests:
+  - script:
+      - test -f "${CONDA_PREFIX}/etc/dirac.cfg"
+      - test "${X509_VOMS_DIR}" = "${CONDA_PREFIX}/etc/grid-security/vomsdir"
+      - test -f "${X509_VOMS_DIR}/lhcb/voms2-lhcb-auth.cern.ch.lsc"
+      - test "${DIRACX_URL}" = "https://lhcbdiracx-cert.app.cern.ch/"
+
+about:
+  license: GPL-3.0-only
+  license_file: LICENSE
+  summary: Configuration package for LHCbDIRAC
+  homepage: https://lhcb-dirac.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - chrisburr
