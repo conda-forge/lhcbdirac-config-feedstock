@@ -13,14 +13,11 @@ cp -r "${RECIPE_DIR}/vomsdir-lhcb/lhcb/" "${PREFIX}/etc/grid-security/vomsdir/lh
 mkdir -p "${PREFIX}/etc/grid-security/vomses"
 cp "${RECIPE_DIR}"/vomses-lhcb/* "${PREFIX}/etc/grid-security/vomses/"
 
-# Actiation scripts
-mkdir -p "${PREFIX}/etc/conda/activate.d"
-cp "${RECIPE_DIR}/activate.sh" "${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.sh"
-cp "${RECIPE_DIR}/activate.csh" "${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.csh"
-cp "${RECIPE_DIR}/activate.fish" "${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.fish"
-
-# Deactivation scripts
-mkdir -p "${PREFIX}/etc/conda/deactivate.d"
-cp "${RECIPE_DIR}/deactivate.sh" "${PREFIX}/etc/conda/deactivate.d/deactivate-${PKG_NAME}.sh"
-cp "${RECIPE_DIR}/deactivate.csh" "${PREFIX}/etc/conda/deactivate.d/deactivate-${PKG_NAME}.csh"
-cp "${RECIPE_DIR}/deactivate.fish" "${PREFIX}/etc/conda/deactivate.d/deactivate-${PKG_NAME}.fish"
+# Environment variables, set and unset by conda/pixi on (de)activation for every shell
+mkdir -p "${PREFIX}/etc/conda/env_vars.d"
+cat > "${PREFIX}/etc/conda/env_vars.d/${PKG_NAME}.json" <<JSON
+{
+  "X509_VOMS_DIR": "${PREFIX}/etc/grid-security/vomsdir",
+  "DIRACX_URL": "https://lhcbdiracx.app.cern.ch/"
+}
+JSON
